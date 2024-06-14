@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cek Khodam Online</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #e0f7fa; /* Light cyan background */
+      }
+      h1 {
+        color: #00796b; /* Dark teal color for the heading */
+      }
+      .container {
+        background-color: #ffffff; /* White background for the container */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        border: 2px solid #00796b; /* Dark teal border for the container */
+      }
+      input[type="text"] {
+        padding: 10px;
+        width: 200px;
+        border: 1px solid #00796b; /* Dark teal border for the input */
+        border-radius: 5px;
+        margin-bottom: 20px;
+      }
+      button {
+        padding: 10px 20px;
+        background-color: #00796b; /* Dark teal background for buttons */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button:hover {
+        background-color: #004d40; /* Darker teal on hover */
+      }
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cek Khodam Online Gratis</h1>
+      <p style="margin-top: -20px; font-weight: 100">hanya untuk bercanda</p>
+      <input
+        type="text"
+        id="nama"
+        placeholder="Masukkan nama Anda"
+        required
+        autocomplete="off"
+        pattern="[A-Za-z\s]+"
+        title="Nama hanya boleh mengandung huruf"
+      />
+      <button onclick="cekKhodam()" aria-label="Cek Khodam">Cek Khodam</button>
+      <button onclick="resetForm()" aria-label="Reset Form">Reset</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      function cekKhodam() {
+        const khodamList = [
+          "macan putih",
+          "harimau majalaya",
+          "hiu merah",
+          "harimau bodas",
+          "elang emas",
+          "ular mata 3",
+          "badak putih",
+          "gajah merah",
+          "buaya biru",
+          "kura-kura ninja",
+          "kambing hijau",
+          "burung hantu",
+          "kucing garong",
+          "ayam jago",
+          "ikan terbang",
+          "serigala ganteng",
+          "kelinci lincah",
+          "panda lucu",
+          "kucing lucu",
+          "burung beo",
+          "landak imut",
+          "rusa elegan",
+          "gajah terbang",
+          "kuda laut",
+          "udang merah",
+          "katak hijau",
+          "beruang madu",
+          "lebah rajin",
+          "tupai cepat",
+          "kupu-kupu cantik",
+          "kadal gesit",
+          "angsa anggun",
+          "domba manis",
+          "lumba-lumba ceria",
+          "gagak hitam",
+          "paus biru",
+          "naga merah",
+          "keledai sabar",
+          "musang cerdik",
+          "bunglon warna-warni",
+          "capung indah",
+          "belut licin",
+          "berang-berang rajin",
+        ];
+
+        const nama = document.getElementById("nama").value.trim();
+        if (nama === "") {
+          alert("Harap masukkan nama Anda.");
+          return;
+        }
+        const randomKhodam =
+          khodamList[Math.floor(Math.random() * khodamList.length)];
+        document.getElementById("result").innerText =
+          "Khodam Anda adalah: " + randomKhodam;
+      }
+
+      function resetForm() {
+        document.getElementById("nama").value = "";
+        document.getElementById("result").innerText = "";
+      }
+    </script>
+  </body>
+</html>
